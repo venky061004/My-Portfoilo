@@ -1,0 +1,39 @@
+/* Hero Navbar Special Styles */
+.navbar-hero {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.navbar-hero::before {
+    animation: navbarSweepFast 2s ease-in-out infinite !important;
+}
+
+.navbar-hero .logo {
+    animation: heroLogoPulse 2s ease-in-out infinite;
+}
+
+.navbar-hero .nav-menu a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-hero .nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+@keyframes navbarSweepFast {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes heroLogoPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
