@@ -86,19 +86,19 @@ export const workExperience: WorkExperience[] = [
     company: 'Food Innovators',
     role: 'B2B Lead Generation via Google Ads',
     type: 'B2B',
-    period: 'Sept 2024 – Dec 2024',
-    location: 'Remote',
+    period: 'Oct 2024 – Sep 2025',
+    location: 'Tamil Nadu, India',
     description: 'Helped contract food manufacturing & consulting firm attract B2B leads from startups launching food products.',
     metrics: [
-      { label: 'Lead Quality', value: 'High' },
-      { label: 'Coverage', value: 'Pan India' },
-      { label: 'CTR', value: 'Improved' },
-      { label: 'Targeting', value: 'Precise' }
+      { label: 'Clicks', value: '6.6K' },
+      { label: 'Impressions', value: '96K' },
+      { label: 'Total Spend', value: '₹39.5K' },
+      { label: 'Qualified Leads', value: '300' }
     ],
     details: [
-      { label: 'Focus', value: 'Protein bars, beverages, snacks' },
+      { label: 'Focus', value: 'Protein bars, Beverages, Snacks' },
       { label: 'Strategy', value: 'Keyword targeting + Landing pages' },
-      { label: 'Results', value: 'Qualified startup leads' }
+      { label: 'Results', value: 'Qualified Business and Startup leads' }
     ]
   }
 ];
@@ -163,6 +163,15 @@ export interface Campaign {
   description: string;
   platform: string;
   tags: string[];
+  documentUrl?: string;
+}
+
+export interface Creative {
+  title: string;
+  type: string;
+  description: string;
+  tags: string[];
+  documentUrl?: string;
 }
 
 export interface Certification {
@@ -176,46 +185,22 @@ export interface Certification {
 
 export const campaigns: Campaign[] = [
   {
-    title: 'Earthy Origins - TOFU Campaign',
-    image: 'https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Campaign+1',
-    description: 'Full-funnel awareness campaign targeting cold audiences with category-based segmentation',
-    platform: 'Meta Ads',
-    tags: ['TOFU', 'Awareness', 'Segmentation']
-  },
+    title: 'Campaign Portfolio',
+    image: '',
+    description: 'Complete collection of successful campaigns including Meta Ads, Google Ads, Performance Max, and B2B lead generation strategies with detailed performance metrics and insights.',
+    platform: 'Meta Ads & Google Ads',
+    tags: ['TOFU', 'BOFU', 'Performance Max', 'B2B', 'Lead Generation'],
+    documentUrl: 'https://drive.google.com/drive/folders/1HAEdM6QOcB5jn2f1pe8HuT_SEDqJfByY?usp=sharing'
+  }
+];
+
+export const creatives: Creative[] = [
   {
-    title: 'BOFU Retargeting Strategy',
-    image: 'https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Campaign+2',
-    description: 'High-converting retargeting campaign with exclusive offers and CPR scaling',
-    platform: 'Meta Ads',
-    tags: ['BOFU', 'Retargeting', 'Conversion']
-  },
-  {
-    title: 'Performance Max Campaign',
-    image: 'https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Campaign+3',
-    description: 'Google Performance Max campaign achieving ₹1.5 CPC with smart automation',
-    platform: 'Google Ads',
-    tags: ['Performance Max', 'Automation', 'Low CPC']
-  },
-  {
-    title: 'B2B Lead Generation',
-    image: 'https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Campaign+4',
-    description: 'Targeted B2B campaign for food consulting firm attracting startup leads',
-    platform: 'Google Ads',
-    tags: ['B2B', 'Lead Gen', 'Startups']
-  },
-  {
-    title: 'Creative A/B Testing',
-    image: 'https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Campaign+5',
-    description: 'Multiple creative variations tested to identify winning assets',
-    platform: 'Meta Ads',
-    tags: ['A/B Testing', 'Creative', 'Optimization']
-  },
-  {
-    title: 'Seasonal Campaign',
-    image: 'https://via.placeholder.com/400x300/1a1a1a/ffffff?text=Campaign+6',
-    description: 'High-impact seasonal campaign with special offers and urgency messaging',
-    platform: 'Meta Ads',
-    tags: ['Seasonal', 'Offers', 'Urgency']
+    title: 'Creative Assets Library',
+    type: 'All Creative Work',
+    description: 'Comprehensive collection of creative assets including ad copy, visual designs, video content, and landing pages used across successful campaigns.',
+    tags: ['Ad Copy', 'Visual Design', 'Video Ads', 'Landing Pages', 'A/B Testing'],
+    documentUrl: 'https://drive.google.com/drive/folders/1HAEdM6QOcB5jn2f1pe8HuT_SEDqJfByY?usp=sharing'
   }
 ];
 

@@ -10,7 +10,8 @@ import { AchievementsRenderer } from './components/Achievements';
 import { Campaigns } from './components/Campaigns';
 import { Certifications } from './components/Certifications';
 import { AnimationUtils } from './utils';
-import { skillsData, workExperience, performanceMetrics, achievements, campaigns, certifications } from './data';
+import { skillsData, workExperience, performanceMetrics, achievements, campaigns, creatives, certifications } from './data';
+import profileImage from './assets/profile.jpg';
 
 class Portfolio {
   constructor() {
@@ -26,6 +27,12 @@ class Portfolio {
   }
 
   private setup(): void {
+    // Set hero profile image
+    const heroImg = document.getElementById('hero-profile-img') as HTMLImageElement;
+    if (heroImg) {
+      heroImg.src = profileImage;
+    }
+
     new Navigation();
 
     SkillsRenderer.renderSkillsGrid(skillsData.development, 'development-skills');
@@ -38,7 +45,7 @@ class Portfolio {
     PerformanceRenderer.renderMetaMetrics(performanceMetrics.meta);
     PerformanceRenderer.renderGoogleMetrics(performanceMetrics.google);
 
-    const campaignsComponent = new Campaigns(campaigns);
+    const campaignsComponent = new Campaigns(campaigns, creatives);
     campaignsComponent.render();
 
     const certificationsComponent = new Certifications(certifications);

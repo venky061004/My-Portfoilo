@@ -29,6 +29,15 @@ export type Campaign = {
   description: string;
   platform: string;
   tags: string[];
+  documentUrl?: string;
+};
+
+export type Creative = {
+  title: string;
+  type: string;
+  description: string;
+  tags: string[];
+  documentUrl?: string;
 };
 
 export type Certification = {
