@@ -1,185 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkateshwaran S - Performance Marketing Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkateshwaran S - Performance Marketing Specialist</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 
-    <!-- ✅ Minimal styling to make hero section and image visible -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #fff;
-            color: #222;
-        }
+  <!-- Core styles (inline for quick use) -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --muted: #6b6b6b;
+      --accent: #ff5252;
+      --container-width: 1100px;
+    }
 
-        .navbar {
-            background: #111;
-            color: #fff;
-            padding: 15px 0;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .nav-container {
-            width: 90%;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: #111;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+    /* Container utility */
+    .container {
+      width: 90%;
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
 
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    /* NAVBAR */
+    .navbar {
+      background: #111;
+      color: #fff;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
 
-        .nav-menu li a {
-            text-decoration: none;
-            color: white;
-            font-weight: 500;
-        }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-        .contact-btn {
-            background: #ff5252;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+    }
 
-        /* ✅ Hero Section */
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 100px 20px;
-            background: #f9f9f9;
-        }
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
 
-        .hero-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            max-width: 1100px;
-            gap: 50px;
-        }
+    .nav-menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
 
-        .hero-left {
-            flex: 1;
-            min-width: 300px;
-        }
+    .contact-btn {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 8px 14px;
+      border-radius: 6px;
+      display: inline-block;
+    }
 
-        .hero-left h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
+    /* HERO */
+    .hero {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #fbfbfb 0%, #ffffff 100%);
+    }
 
-        .social-links a {
-            color: #111;
-            margin-right: 15px;
-            font-size: 1.5rem;
-        }
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 40px;
+      align-items: center;
+    }
 
-        .hero-right {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            min-width: 300px;
-        }
+    .greeting {
+      margin: 0 0 8px 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
 
-        .hero-image {
-            position: relative;
-            text-align: center;
-        }
+    .name {
+      margin: 0 0 6px 0;
+      font-size: 2.4rem;
+      line-height: 1.05;
+    }
 
-        .hero-image img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-        }
+    .role {
+      margin: 0 0 18px 0;
+      color: var(--muted);
+      font-weight: 600;
+    }
 
-        .image-label {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #000;
-            color: #fff;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            letter-spacing: 1px;
-        }
+    .social-links a {
+      margin-right: 12px;
+      color: #111;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            color: #fff;
-            margin-top: 50px;
-        }
-    </style>
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(16, 24, 40, 0.08);
+      display: block;
+      border: 3px solid #fff;
+      background-image: url(venky.png);
+    }
+
+    .image-label {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 18px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    /* ABOUT + STATS */
+    .about {
+      padding: 60px 0;
+    }
+
+    .about-header h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .about-intro {
+      margin: 0 0 16px 0;
+      color: var(--muted);
+    }
+
+    .about-details {
+      margin-top: 16px;
+    }
+
+    .section-btn {
+      background: transparent;
+      border: 1px solid #111;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .about-text {
+      margin-top: 12px;
+      color: #333;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .stat-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+    }
+
+    .stat-value {
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin-top: 8px;
+    }
+
+    .stat-label {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* COMMON SECTION STYLES */
+    section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      margin: 0 0 6px 0;
+      font-size: 1.2rem;
+    }
+
+    .section-subtitle {
+      margin: 0 0 18px 0;
+      color: var(--muted);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+      background: #fff;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .summary-card {
+      padding: 14px;
+      border-radius: 10px;
+      background: #fff;
+      text-align: left;
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04);
+    }
+
+    /* CONTACT & FOOTER */
+    .contact {
+      padding: 40px 0;
+      background: #fafafa;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 12px;
+      max-width: 700px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px 12px;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .submit-btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    footer.footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #111;
+      color: #fff;
+      margin-top: 40px;
+    }
+    
+
+    /* RESPONSIVE */
+    @media (max-width: 980px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 260px;
+        height: 260px;
+      }
+
+      .nav-menu {
+        display: none; /* simple: hide on small screens */
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">VS</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#performance">Performance</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#campaigns">Campaigns</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact" class="contact-btn"><span>Hire Me</span></a></li>
-            </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">VS</div>
+
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#performance">Performance</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#campaigns">Campaigns</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact" class="contact-btn"><span>Hire Me</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="hero-left">
+        <p class="greeting">Hi, I am</p>
+        <h1 class="name">Venkateshwaran S</h1>
+        <p class="role">Performance Marketing Specialist</p>
+
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
-    </nav>
+      </div>
 
-    <!-- ✅ HERO SECTION FIXED -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-left">
-                <p class="greeting">Hi, I am</p>
-                <h1 class="name">Venkateshwaran S</h1>
-                <h3 class="role">Performance Marketing Specialist</h3>
-
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <div class="hero-right">
-                <div class="hero-image">
-                    <!-- ✅ Make sure your image is placed in the 'img' folder beside index.html -->
-                    <img src="img/naan.JPG" alt="Venkateshwaran S">
-                    <div class="image-label">
-                        <span>SCROLL</span>
-                    </div>
-                </div>
-            </div>
+      <div class="hero-right">
+        <div class="hero-image">
+          <!-- Make sure this path exists: project-root/img/naan.JPG -->
+          <img src="venky.png" alt="Venkateshwaran S" />
+          <div class="image-label"><span>SCROLL</span></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ✅ Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>MADE WITH  BY VENKATESHWARAN S</p>
-            <p>Performance Marketing Specialist | Tamil Nadu, India</p>
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-header">
+          <h2>PERFORMANCE MARKETING SPECIALIST</h2>
+          <p class="about-intro">
+            Helping D2C and B2B brands and startups grow profitably using
+            data-backed Meta & Google ad strategies. I build conversion-focused
+            funnels, optimize ad performance, and scale campaigns with a sharp
+            focus on ROI.
+          </p>
         </div>
-    </footer>
+
+        <div class="about-details">
+          <button class="section-btn">ABOUT ME</button>
+          <p class="about-text">
+            Delivered ₹88L+ in revenue with 3.10 ROAS across multiple campaigns.
+            Specializing in full-funnel optimization, audience segmentation,
+            and data-driven decision making. Expert in Meta Ads Manager, Google
+            Ads, and conversion rate optimization. Proven track record in
+            scaling D2C brand and generating high-quality B2B leads.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-grid" aria-hidden="false">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="stat-value">₹88L+</div>
+          <div class="stat-label">Total Revenue</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="stat-value">3.10</div>
+          <div class="stat-label">Average ROAS</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-shopping-cart"></i></div>
+          <div class="stat-value">8600+</div>
+          <div class="stat-label">Total Purchases</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fas fa-mouse-pointer"></i></div>
+          <div class="stat-value">₹1.5</div>
+          <div class="stat-label">Lowest CPC</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience">
+    <div class="container">
+      <h2 class="section-title">WORK EXPERIENCE</h2>
+      <p class="section-subtitle">
+        Driving growth through strategic performance marketing across D2C and
+        B2B sectors
+      </p>
+
+      <div class="experience-grid" id="experience-grid"></div>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE -->
+  <section id="performance" class="performance-dashboard">
+    <div class="container">
+      <h2 class="section-title">PERFORMANCE DASHBOARD</h2>
+      <p class="section-subtitle">
+        Real results from strategic campaign optimization and scaling
+      </p>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-card meta-card">
+          <div class="card-header">
+            <i class="fab fa-meta"></i>
+            <h3>Meta Ads Performance</h3>
+            <span class="period">Aug 2024 – September 2025</span>
+          </div>
+          <div class="metrics-grid" id="meta-metrics"></div>
+        </div>
+
+        <div class="dashboard-card google-card">
+          <div class="card-header">
+            <i class="fab fa-google"></i>
+            <h3>Google Ads Performance</h3>
+            <span class="period">Oct 2024 – September 2025</span>
+          </div>
+          <div class="metrics-grid" id="google-metrics"></div>
+        </div>
+      </div>
+
+      <div class="summary-cards">
+        <div class="summary-card">
+          <i class="fas fa-dollar-sign"></i>
+          <h4>₹88+ L Total Revenue</h4>
+          <p>Combined Meta & Google performance</p>
+        </div>
+
+        <div class="summary-card">
+          <i class="fas fa-users"></i>
+          <h4>3.5M+ Reach</h4>
+          <p>Massive audience engagement</p>
+        </div>
+
+        <div class="summary-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>Consistent Profitability</h4>
+          <p>Across all campaigns</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNNEL, SKILLS, CAMPAIGNS, CERTIFICATIONS, ACHIEVEMENTS -->
+  <!-- (Kept same structure as before; you can populate these sections similarly) -->
+  <section id="funnel" class="funnel-strategy">
+    <div class="container">
+      <h2 class="section-title">FUNNEL STRATEGY</h2>
+      <p class="section-subtitle">
+        Structured approach to guide prospects from awareness to conversion
+      </p>
+      <!-- funnel content -->
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">TOOLS & SKILLS</h2>
+      <p class="section-subtitle">
+        Leveraging cutting-edge tools to deliver exceptional results
+      </p>
+      <!-- skills content -->
+    </div>
+  </section>
+
+  <section id="campaigns" class="campaigns">
+    <div class="container">
+      <h2 class="section-title">CAMPAIGN SHOWCASE</h2>
+      <p class="section-subtitle">Visual highlights from successful campaigns</p>
+    </div>
+  </section>
+
+  <section id="certifications" class="certifications">
+    <div class="container">
+      <h2 class="section-title">CERTIFICATIONS</h2>
+      <p class="section-subtitle">Professional credentials and continuous learning</p>
+    </div>
+  </section>
+
+  <section id="achievements" class="achievements">
+    <div class="container">
+      <h2 class="section-title">KEY ACHIEVEMENTS</h2>
+      <p class="section-subtitle">Proven track record of delivering exceptional results</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <button class="section-btn">GET IN TOUCH</button>
+      <p class="contact-intro">
+        Ready to scale your brand with data-driven performance marketing?
+        Let's discuss how I can help you achieve your growth goals.
+      </p>
+
+      <form class="contact-form" id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <input type="text" id="subject" placeholder="Subject" required />
+        <textarea
+          id="message"
+          placeholder="Tell me about your project..."
+          rows="5"
+          required
+        ></textarea>
+        <button type="submit" class="submit-btn">SEND MESSAGE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>MADE WITH ❤️ BY VENKATESHWARAN S</p>
+      <p>Performance Marketing Specialist | Tamil Nadu, India</p>
+    </div>
+  </footer>
 </body>
 </html>
