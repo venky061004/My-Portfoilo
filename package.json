@@ -7,7 +7,10 @@
     "build": "webpack --mode production",
     "type-check": "tsc --noEmit"
   },
-  "keywords": ["portfolio", "typescript"],
+  "keywords": [
+    "portfolio",
+    "typescript"
+  ],
   "author": "Tomasz Gajda",
   "license": "MIT",
   "devDependencies": {
@@ -20,5 +23,8 @@
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.2.0"
   }
 }

@@ -12,6 +12,7 @@ import { Certifications } from './components/Certifications';
 import { AnimationUtils } from './utils';
 import { skillsData, workExperience, performanceMetrics, achievements, campaigns, creatives, certifications } from './data';
 import profileImage from './assets/profile.jpg';
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
 class Portfolio {
   constructor() {
@@ -27,6 +28,9 @@ class Portfolio {
   }
 
   private setup(): void {
+    // Initialize Vercel Speed Insights
+    injectSpeedInsights();
+
     // Set hero profile image
     const heroImg = document.getElementById('hero-profile-img') as HTMLImageElement;
     if (heroImg) {
