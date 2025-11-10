@@ -38,13 +38,11 @@ export const skillsData: SkillsData = {
   development: [
     { icon: 'fab fa-meta', name: 'Meta Ads Manager' },
     { icon: 'fab fa-google', name: 'Google Ads' },
-    { icon: 'fas fa-chart-line', name: 'Google Analytics' },
-    { icon: 'fas fa-bullseye', name: 'Performance Max' }
+    { icon: 'fas fa-chart-line', name: 'Google Analytics' }
   ],
   frameworks: [
     { icon: 'fas fa-palette', name: 'Canva' },
     { icon: 'fas fa-file-excel', name: 'Excel' },
-    { icon: 'fas fa-chart-bar', name: 'Data Studio' },
     { icon: 'fas fa-funnel-dollar', name: 'Funnel Strategy' }
   ],
   learning: [
@@ -200,7 +198,7 @@ export const creatives: Creative[] = [
     type: 'All Creative Work',
     description: 'Comprehensive collection of creative assets including ad copy, visual designs, video content, and landing pages used across successful campaigns.',
     tags: ['Ad Copy', 'Visual Design', 'Video Ads', 'Landing Pages', 'A/B Testing'],
-    documentUrl: 'https://drive.google.com/drive/folders/1HAEdM6QOcB5jn2f1pe8HuT_SEDqJfByY?usp=sharing'
+    documentUrl: 'https://drive.google.com/drive/folders/175SOZcO5TMLb4_qTRuiQir3dXLDq0z6W?usp=sharing'
   }
 ];
 
